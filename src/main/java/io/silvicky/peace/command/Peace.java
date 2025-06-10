@@ -36,6 +36,7 @@ public class Peace {
     {
         dispatcher.register(
                 literal("peace")
+                        .requires(source -> source.hasPermissionLevel(2))
                         .executes(context->help(context.getSource()))
                         .then(argument(TYPE, StringArgumentType.string())
                                 .then(argument(RADIUS, LongArgumentType.longArg())
