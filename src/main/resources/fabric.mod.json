@@ -20,7 +20,7 @@
 		]
 	},
 	"mixins": [
-		"item-storage.mixins.json"
+		"regional-peace.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.16.9",
