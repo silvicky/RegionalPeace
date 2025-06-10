@@ -24,7 +24,7 @@ loom {
     splitEnvironmentSourceSets()
 
 	mods {
-		"item-storage" {
+		"regional-peace" {
 			sourceSet sourceSets.main
 			sourceSet sourceSets.client
 		}
