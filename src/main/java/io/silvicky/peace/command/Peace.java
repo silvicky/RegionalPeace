@@ -10,6 +10,8 @@ import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import io.silvicky.peace.StateSaver;
 import net.minecraft.command.argument.DimensionArgumentType;
 import net.minecraft.command.argument.Vec3ArgumentType;
+import net.minecraft.command.permission.Permission;
+import net.minecraft.command.permission.PermissionLevel;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.world.ServerWorld;
@@ -36,7 +38,7 @@ public class Peace {
     {
         dispatcher.register(
                 literal("peace")
-                        .requires(source -> source.hasPermissionLevel(2))
+                        .requires(source -> source.getPermissions().hasPermission(new Permission.Level(PermissionLevel.GAMEMASTERS)))
                         .executes(context->help(context.getSource()))
                         .then(argument(TYPE, StringArgumentType.string())
                                 .then(argument(RADIUS, LongArgumentType.longArg())
