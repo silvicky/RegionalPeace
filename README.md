@@ -1,1 +1,1 @@
-see https://modrinth.com/mod/combinedworld
+see https://modrinth.com/mod/regional-peace
