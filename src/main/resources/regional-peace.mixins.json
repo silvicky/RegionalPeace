@@ -3,7 +3,7 @@
   "package": "io.silvicky.peace.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "SpawnHelperMixin"
+    "NaturalSpawnerMixin"
   ],
   "injectors": {
     "defaultRequire": 1
