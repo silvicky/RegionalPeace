@@ -10,7 +10,7 @@ public class RegionalPeace implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
 	// That way, it's clear which mod wrote info, warnings, and errors.
-	public static final String MOD_ID = "RegionalPeace";
+	public static final String MOD_ID = "peace";
     public static final Logger LOGGER = LoggerFactory.getLogger("regional-peace");
 	@Override
 	public void onInitialize() {
@@ -18,6 +18,6 @@ public class RegionalPeace implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 		LOGGER.info("Loading RegionalPeace...");
-		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> Peace.register(dispatcher));
+		CommandRegistrationCallback.EVENT.register((dispatcher, _, _) -> Peace.register(dispatcher));
 	}
 }
