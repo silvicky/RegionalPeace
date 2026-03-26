@@ -19,6 +19,7 @@ import java.util.HashMap;
 
 public class StateSaver extends SavedData
 {
+    private static boolean checkMigrate=true;
     private static final Identifier id=Identifier.fromNamespaceAndPath("silvicky",RegionalPeace.MOD_ID);
     public final HashMap<Identifier, HashMap<MobCategory, HashMap<Vec3i, Long> > > mp;
     public static final String SAVED="saved";
@@ -51,7 +52,11 @@ public class StateSaver extends SavedData
         }
     }
     public static StateSaver getServerState(MinecraftServer server) {
-        migrate(server);
+        if(checkMigrate)
+        {
+            migrate(server);
+            checkMigrate=false;
+        }
         SavedDataStorage persistentStateManager = server.getDataStorage();
         StateSaver state = persistentStateManager.computeIfAbsent(type);
         state.setDirty();
