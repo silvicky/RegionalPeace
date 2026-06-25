@@ -35,7 +35,7 @@ public class NaturalSpawnerMixin
         {
             Vec3 center=v3iToV3d(entry.getKey());
             long radius=entry.getValue();
-            double dis=center.distanceTo(pos.getBottomCenter());
+            double dis=center.distanceTo(Vec3.atBottomCenterOf(pos));
             if(dis<=radius)
             {
                 cir.setReturnValue(false);
